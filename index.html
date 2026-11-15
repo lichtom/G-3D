@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>G-3D — Scratch 迷你 3D 引擎</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: #0d1117; color: #c9d1d9;
+      min-height: 100vh; display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+    }
+    h1 {
+      font-size: 4rem; font-weight: 800;
+      background: linear-gradient(135deg, #58a6ff, #bc8cff);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      margin-bottom: .3em;
+    }
+    p.sub { font-size: 1.2rem; color: #8b949e; margin-bottom: 2em; }
+    .tools { display: flex; gap: 1.2em; flex-wrap: wrap; justify-content: center; }
+    .tools a {
+      text-decoration: none; color: #c9d1d9;
+      background: #161b22; border: 1px solid #30363d;
+      border-radius: 10px; padding: 1.2em 1.8em;
+      transition: border-color .2s, transform .15s;
+      display: flex; flex-direction: column; align-items: flex-start;
+      min-width: 200px;
+    }
+    .tools a:hover { border-color: #58a6ff; transform: translateY(-3px); }
+    .tools a .icon { font-size: 1.8rem; margin-bottom: .4em; }
+    .tools a .title { font-weight: 600; font-size: 1.05rem; }
+    .tools a .desc { font-size: .85rem; color: #8b949e; margin-top: .3em; }
+    footer { position: fixed; bottom: 1.2em; font-size: .8rem; color: #484f58; }
+  </style>
+</head>
+<body>
+  <h1>G-3D</h1>
+  <p class="sub">A Scratch-based Mini 3D Engine</p>
+  <div class="tools">
+    <a href="texture/index.html">
+      <span class="icon">🖼️</span>
+      <span class="title">纹理转换器</span>
+      <span class="desc">将图片转换为 .Gtxr 纹理文件</span>
+    </a>
+  </div>
+  <footer>G-3D Project</footer>
+</body>
+</html>
