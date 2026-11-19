@@ -234,7 +234,7 @@
       const row = [];
       for (let x = 0; x < w; x++) {
         const i = (y * w + x) * 4;
-        row.push(rgbHex(px[i], px[i + 1], px[i + 2]));
+        row.push(rgbaHex(px[i], px[i + 1], px[i + 2], px[i + 3]));
       }
       grid.push(row);
     }
@@ -247,7 +247,7 @@
     const ctx = pixelCanvas.getContext('2d');
     for (let y = 0; y < h; y++)
       for (let x = 0; x < w; x++) {
-        ctx.fillStyle = grid[y][x];
+        ctx.fillStyle = grid[y][x].slice(0, 7);
         ctx.fillRect(x * cell, y * cell, cell, cell);
       }
     /* Grid lines */
@@ -266,8 +266,12 @@
       : gtxrData;
   }
 
-  function rgbHex(r, g, b) {
-    return '#' + ((1 << 24) | (r << 16) | (g << 8) | b).toString(16).slice(1).toUpperCase();
+  function rgbaHex(r, g, b, a) {
+    return '#' +
+      r.toString(16).padStart(2, '0') +
+      g.toString(16).padStart(2, '0') +
+      b.toString(16).padStart(2, '0') +
+      a.toString(16).padStart(2, '0');
   }
 
   /* ---------- Download ---------- */
